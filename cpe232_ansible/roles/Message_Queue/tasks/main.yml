@@ -1,0 +1,12 @@
+- name: installation Message Queue
+  apt:
+    name: rabbitmq-server
+    state: latest
+
+- name: Openstack user add
+  shell:
+    rabbitmqctl add_user cordero2 lastking23
+
+- name: permission to configure, write, and read
+  shell:
+    rabbitmqctl set_permissions cordero ".*" ".*" ".*"
